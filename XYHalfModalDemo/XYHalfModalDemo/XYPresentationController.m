@@ -67,6 +67,13 @@
     [self frameSetup];
 }
 
+- (void)dismissalTransitionWillBegin {
+    NSLog(@"");
+    [UIView animateWithDuration:0.25 animations:^{
+        self.dimView.alpha = 0;
+    }];
+}
+
 
 - (void)frameSetup {
     
@@ -99,9 +106,7 @@
 - (void)tapClick {
 
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.dimView.alpha = 0;
-    }];
+    
 }
 
 
